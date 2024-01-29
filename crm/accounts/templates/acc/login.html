@@ -1,0 +1,43 @@
+{% extends 'acc/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<body>
+   
+    <br>
+    <div class="container bg-light shadow-md p-5 form-layout">
+        
+        <h2>Login</h2>
+       
+        <hr>
+
+        <br> 
+
+        <form action="" method="POST" autocomplete="off">
+
+            {% csrf_token %} <!--   'Cross-Site Request Forgery' tokens help protect against CSRF attacks by making it difficult for an attacker to construct a valid request on behalf of the victim. -->
+       
+            {{form|crispy}}
+
+            <br>
+           
+            <button type="submit" class="btn btn-success w-100 btn-block p-2">Login &nbsp; <i class="fa fa-key" aria-hidden="true"></i></button>
+            <a style="margin-left: 270px;" href="#">Forgot Password?</a>
+        </form>
+
+        <div class="mt-4">
+            <div class="d-flex justify-content-center links">
+                Don't have an Account? &nbsp;<a href="{% url 'my-register'%}">Register</a>
+            </div>
+        </div>
+
+    </div><br>
+
+    
+</body>    
+
+
+{% endblock %}

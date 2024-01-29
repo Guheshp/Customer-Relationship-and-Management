@@ -1,0 +1,28 @@
+{% extends 'acc/base.html'%}
+
+{% block content %}
+<body>
+    
+    <div class="  shadow-md p-lg-5 form-layout1 " style="margin-top: 20px;">
+
+        {% if user.is_authenticated %}
+        <h2>Wellcome to "Customer Relationship Management."</h2>
+
+
+
+
+
+        <br>
+
+        <!-- <h5> Keep track of your records effectively! </h5> -->
+
+        <hr>
+
+        <br>
+
+        {% else %}
+        <a class="btn btn-info" type="button" href="{% url 'my-register'%}">Create your account &nbsp; <i class="fa fa-user-plus" aria-hidden="true"></i></a>
+        {% endif %}
+    </div>
+</body>
+{% endblock %}

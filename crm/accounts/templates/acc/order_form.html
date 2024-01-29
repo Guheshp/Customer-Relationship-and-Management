@@ -1,0 +1,36 @@
+{% extends 'acc/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<body>
+    <br>
+    <div class="container bg-light shadow-md p-5 form-layout">
+        
+        <h2> Create Order for <span style="color:cadetblue;">{{customer.name}}</span></h2>
+
+        <hr>
+
+        <br> 
+
+        <form action="" method="POST" autocomplete="off">
+
+            {% csrf_token %} <!--   'Cross-Site Request Forgery' tokens help protect against CSRF attacks by making it difficult for an attacker to construct a valid request on behalf of the victim. -->
+            {{ formset.management_form }}
+            {% for form in formset%}
+                {{form |crispy}}
+                <hr>
+            {% endfor %}
+
+            <br>
+
+            <button type="submit" class="btn btn-primary w-100 btn-block p-2">Create Order &nbsp; <i class="fa fa-key" aria-hidden="true"></i></button>
+
+        </form>
+    </div><br>
+</body>    
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'acc/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<body>
+    <br>
+    <div class="container bg-light shadow-md p-5 form-layout">
+        
+        <h2>Update Order</h2>
+
+        <hr>
+
+        <br> 
+
+        <form action="" method="POST" autocomplete="off">
+
+            {% csrf_token %} <!--   'Cross-Site Request Forgery' tokens help protect against CSRF attacks by making it difficult for an attacker to construct a valid request on behalf of the victim. -->
+       
+            {{form|crispy}}
+
+            <br>
+            <a  class="btn btn-outline-info p-2" href="{% url 'my-dashboard'%}">Cancle</a>
+
+            <button type="submit" class="btn btn-outline-success p-2">Update Order &nbsp; <i class="fa fa-key" aria-hidden="true"></i></button>
+
+        </form>
+
+    </div>
+    <br>
+</body>    
+
+
+{% endblock %}

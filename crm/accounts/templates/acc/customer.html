@@ -1,0 +1,116 @@
+{% extends 'acc/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<body>
+    
+
+<div class="row">
+    <div class="col" style="margin-top: 15px; " >
+        <div class="col-md" >
+            <div class="card text-black bg-white mb-3" >
+                
+                <div class="card-body card-heading">
+                    <h5 class="card-title">Customer</h5>
+                    <hr>
+                    <a  class="btn btn-outline-info w-100" href="{% url 'my-updatecustomer' customer.id %}" >Update Customer</a><br><br>
+                    <a  class="btn btn-outline-info w-100" href="{% url 'my-order' customer.id%}">Add new orders</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="col-md"  style="margin-top: 15px;">
+            <div class="card text-black bg-white mb-3">
+                
+                <div class="card-body card-heading">
+                    <h5 class="card-title">Contact Information</h5>
+                    <hr>
+                    <p>Nmae:<strong>&nbsp;{{customer.name}}</strong></p>
+                    <p>Email:<strong>&nbsp;{{customer.email}}</strong></p>
+                    <p>Phone:<strong>&nbsp;{{customer.phone}}</strong></p>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+
+    <div class="col" >
+        <div class="col-md"  style="margin-top: 15px;">
+            <div class="card text-black bg-white mb-3">
+               
+                <div class="card-body card-heading">
+                    <h5 class="card-title">Total orders</h5>
+                    <hr>
+                    <p>{{total_order}}</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row " style="margin-right: 10px; margin-left: 10px;">
+    <div class="col">
+        <div class="card text-black bg-white mb-3" >
+                
+            <div class="card-body">
+
+              <form action="" method="get">
+
+                {{my_filter.form | crispy}}
+
+                <button type="submit" class="btn btn-primary" >Search </button>
+
+            </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="row" style="margin-right: 10px; margin-left: 10px;">
+    <div class="col-md">
+
+            <div class=" card card-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Products</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Date order</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Update</th>
+                        <th scope="col">Remove</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for o in order %}
+                    <tr>
+                        <td>{{o.product.name}}</td>
+                        <td>{{o.product.category}}</td>
+                        <td>{{o.product.date_created}}</td>
+                        <td>{{o.status}}</td>
+                        <td>
+                            <a  class="btn btn-outline-info" href="{% url 'my-updateorder' o.id%}">Update</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-outline-danger" href="{% url 'my-deleteorder' o.id%}">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+
+                </table>
+            </div>
+    </div>
+</div>
+<br>
+
+</body>
+{% endblock %}

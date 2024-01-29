@@ -1,0 +1,32 @@
+{% extends 'acc/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<body>
+    <br>
+    <div class="container bg-light shadow-md p-5 form-layout">
+        
+        <h2> Create Order </h2>
+
+        <hr>
+        <h6>Are You Confirm to Delete {{item}}!</h6>
+        <br> 
+
+        <form action="" method="POST" autocomplete="off">
+
+            {% csrf_token %}
+
+
+            <a  class="btn btn-outline-info p-2" href="{% url 'my-dashboard'%}">Cancle</a>
+
+            <button type="submit" class="btn btn-outline-danger p-2">Delete Order &nbsp; <i class="fa fa-key" aria-hidden="true"></i></button>
+
+        </form>
+    </div><br>
+</body>    
+
+
+{% endblock %}

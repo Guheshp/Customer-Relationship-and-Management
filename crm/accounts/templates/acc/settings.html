@@ -1,0 +1,41 @@
+
+{% extends 'acc/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<body>
+    <div class="row"  style="margin-right: 10px; margin-left: 10px;">
+        <div class="col-md-">
+        <div class="card mb-" style="width: 15rem;">
+            <div class="card-body">
+                <a class="btn btn-info" href="{% url 'my-home'%}">Back to Profile</a>
+                <hr>
+                <h3 class="card-title">Account Setting</h3>
+                <hr>
+                <img class="profile-pic" src="{{request.user.customer.profile_pic.url}}" alt="">
+            </div>
+        </div>
+        </div>
+        <div class="col-md-6">
+        <div class="card mb-3">
+           
+            <div class="card-body">
+
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{form | crispy}}
+                   <input class="btn btn-success" type="submit" name="Update" >
+                </form>
+
+                
+            </div>
+        </div>
+    </div>
+    </div>
+
+        
+</body>
+
+{%endblock%}

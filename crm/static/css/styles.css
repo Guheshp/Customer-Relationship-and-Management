@@ -1,0 +1,128 @@
+.bg-COLOUR{
+    background-color: rgb(251, 245, 236);
+    height: 100%;
+}
+.logo-img{
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.card-heading{
+    font-size: 20px;
+    font-weight: 100;
+    text-align: center;
+}
+.text-dec1 {
+    text-decoration:none;
+    color: black;
+
+}
+#myLink {
+    text-decoration: none;
+    color: rgb(172, 0, 86);
+   
+}
+
+.form-layout{
+    border-radius:50px ;
+    width: 600px;
+    
+}
+.product-btn{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+
+.container {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+}
+
+.container header {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 700;
+  text-align: center;
+  
+}
+
+.form .input-box {
+  width: 100%;
+  margin-top: 20px;
+}
+.input-box label {
+  color: #333;
+}
+.form :where(.input-box input, .select-box) {
+  position: relative;
+  height: 45px;
+  width: 100%;
+  outline:none;
+  color: #707070;
+  margin-top: 1px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+.input-box input:focus {
+  box-shadow: 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.bnt-layout{
+    margin-top: 40px;
+    width: 200px;
+
+}
+/*Responsive*/
+@media screen and (max-width: 500px) {
+  .form .column {
+    flex-wrap: wrap;
+  }
+  .form :where(.gender-option, .gender) {
+    row-gap: 15px;
+  }
+}
+
+.form-layout1{
+      
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+   
+ 
+}
+.msg-width{
+    margin-left: 500px;
+    margin-right: 500px;
+    margin-top: 20px;
+}
+
+.user-p p{
+  margin: 0;
+ 
+  padding: 8px;
+
+}
+
+/* setting */
+
+.profile-pic {
+  width: 100px;
+  border-radius: 50%;
+  margin-left: 40px;
+
+}
+
+

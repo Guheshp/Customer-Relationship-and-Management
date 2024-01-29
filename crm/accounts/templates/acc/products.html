@@ -1,0 +1,41 @@
+{% extends 'acc/base.html' %}
+
+{% block content %}
+
+    <div class="row" style="margin-right: 10px; margin-left: 10px;">
+        <div class="col-md">
+
+                <div class="product-btn">
+                    <a class="btn btn-info" href="{% url 'my-addproducts'%}">Add New Products</a>
+                </div>
+
+                <div class=" card card-body">
+                    <h1>Products</h1>
+                </div> <br>
+
+                <div class=" card card-body">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Products</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                            {% for i in product %}
+                        <tr>
+                            <td>{{i.name}}</td>
+                            <td>{{i.category}}</td>
+                            <td>{{i.price}}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+
+                     </table>
+                </div><br>
+        </div>
+        
+    
+{% endblock %}
